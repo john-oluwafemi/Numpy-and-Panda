@@ -10,7 +10,7 @@ exam_data = {'name': ['Anastasia', 'Dima', 'Katherine', 'James', 'Emily', 'Micha
 labels = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
 
 
-#given the data above, create a datafram using the labels as row indexes and perform the following tasks#
+#given the data above, create a dataframe using the labels as row indexes and perform the following tasks#
 
 datafram = pd.DataFrame(exam_data, index=labels)
 
@@ -35,7 +35,7 @@ i      Kevin    8.0
 j      Jonas   19.0 
 """
 
-print('\n')
+print("Question 1:")
 print(datafram[['name', 'score']])
 print()
 
@@ -53,10 +53,15 @@ f   20.0     yes
 g   14.5     yes
 
 """
-
+print("Question 2:")
 print(datafram.loc[datafram.index[[1, 3, 5, 6]], ['score', 'qualify']])
 print()
 
+ # OR
+
+data_frame = datafram.loc[['b', 'd', 'f', 'g'], ['score', 'qualify']]
+print(data_frame)
+print()
 
 
 """
@@ -69,7 +74,7 @@ d    James    NaN         3      no
 f  Michael   20.0         3     yes                    
 
 """
-
+print("Question 3:")
 print(datafram[datafram['attempts'] > 2])
 print()
 
@@ -85,9 +90,8 @@ f         3    Michael       yes        20.0
 j         1      Jonas       yes        19.0   
 
 """
-
+print("Question 4:")
 print(datafram[(datafram['score'] >= 15) & (datafram['score'] <= 20)])
-# print(datafram[(datafram['score'] >= 15) & (datafram['score'] <= 20)][['attempts', 'name', 'qualify', 'score']])
 print()
 
 
@@ -111,8 +115,6 @@ Expected Output:
 
 """
 
-
+print("Question 5:")
 print(datafram.sort_values(by=['attempts', 'name']))
-
-
-print('\n')
+print()
